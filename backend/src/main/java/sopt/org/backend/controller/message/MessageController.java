@@ -1,6 +1,7 @@
 package sopt.org.backend.controller.message;
 
 
+<<<<<<< HEAD
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,4 +29,8 @@ public class MessageController {
 
     }
 
+=======
+public class MessageController {
+
+>>>>>>> e5e7dcdfa1ad34aef4fcf1037af9c8ef9e19d690
 }
