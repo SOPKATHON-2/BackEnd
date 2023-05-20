@@ -2,16 +2,16 @@ package sopt.org.backend.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import sopt.org.backend.controller.message.dto.request.MessageRequestDto;
 import sopt.org.backend.domain.message.Message;
 import sopt.org.backend.domain.room.Room;
 import sopt.org.backend.infrastructure.message.MessageRepository;
 import sopt.org.backend.infrastructure.room.RoomRepository;
 
-import javax.transaction.Transactional;
 
 @Service
-@Transactional
+@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class MessageService {
 
