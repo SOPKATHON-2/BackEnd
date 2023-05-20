@@ -187,6 +187,9 @@ ex)
   
 ## ERD
   
+  <img width="618" alt="image" src="https://github.com/SOPKATHON-2/BackEnd/assets/81281190/d988bfd4-7d78-4991-ac71-5b5f525f24dc">
+
+  
 ## 참여자
 프론트팀
 <table>
