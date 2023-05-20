@@ -1,4 +1,11 @@
 package sopt.org.backend.infrastructure.room;
 
-public interface RoomRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import sopt.org.backend.domain.room.Room;
+
+import java.util.Optional;
+
+public interface RoomRepository extends JpaRepository<Room, Long> {
+
+    Optional<Room> findByName(String Name);
 }
