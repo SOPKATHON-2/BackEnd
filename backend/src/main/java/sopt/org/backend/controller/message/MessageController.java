@@ -1,7 +1,5 @@
 package sopt.org.backend.controller.message;
 
-
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,14 +17,10 @@ public class MessageController {
 
     private final MessageService messageService;
 
-    @PostMapping("/")
-    public ResponseEntity<JsonResponseDto> getAccountsList(
-            @RequestBody MessageRequestDto messageRequestDto
-
-    ) {
+    @PostMapping
+    public ResponseEntity<JsonResponseDto> postMessage(@RequestBody MessageRequestDto messageRequestDto){
         messageService.create(messageRequestDto);
-        return ResponseEntity.ok(JsonResponseDto.success(SuccessType.MESSAGE_SUCCESS));
+        return ResponseEntity.ok(JsonResponseDto.success(SuccessType.CREATE_MESSAGE_SUCCESS));
 
     }
 }
-

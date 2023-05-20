@@ -5,10 +5,8 @@ import org.springframework.stereotype.Service;
 import sopt.org.backend.common.dto.ErrorType;
 import sopt.org.backend.domain.room.Room;
 import sopt.org.backend.exception.NotFoundException;
-import sopt.org.backend.infrastructure.message.MessageRepository;
 import sopt.org.backend.infrastructure.room.RoomRepository;
 
-import java.util.Optional;
 import java.util.Random;
 
 @Service

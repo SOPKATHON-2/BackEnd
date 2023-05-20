@@ -20,15 +20,11 @@ public class MessageService {
     // 메시지를 쓴다 create
     @Transactional
     public void create(MessageRequestDto messageRequestDto){
-
-        Room room = roomRepository.findByName(messageRequestDto.getRoom_Name())
+        Room room = roomRepository.findByName(messageRequestDto.getRoomName())
                 .orElseThrow();
-
         messageRepository.save(Message.builder()
                 .room(room)
                 .content(messageRequestDto.getContent())
                 .build());
     }
-
-
 }
