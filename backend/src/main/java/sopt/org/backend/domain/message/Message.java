@@ -29,7 +29,7 @@ public class Message {
     @Column
     private String content;
 
-    @Column(name = "create_at")
+    @Column(name = "created_at")
     @CreatedDate
     @DateTimeFormat(pattern = "yyyy.MM.dd")
     private LocalDateTime createdAt;
@@ -38,5 +38,6 @@ public class Message {
     public Message(Room room, String content) {
         this.room = room;
         this.content = content;
+        this.createdAt = LocalDateTime.now();
     }
 }
