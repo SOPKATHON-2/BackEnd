@@ -13,7 +13,7 @@ public enum SuccessType {
     /**
      * 201 CREATED
      */
-    SIGNUP_SUCCESS(HttpStatus.CREATED, "회원가입이 완료됐습니다."),
+    MESSAGE_SUCCESS(HttpStatus.OK, "메시지가 전송되었습니다."),
     ;
 
     private final HttpStatus httpStatus;

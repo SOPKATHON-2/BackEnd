@@ -34,7 +34,6 @@ public class MessageService {
         messageRepository.save(Message.builder()
                 .room(room)
                 .content(messageRequestDto.getContent())
-                .createdAt(LocalDateTime.now())
                 .build());
     }
 

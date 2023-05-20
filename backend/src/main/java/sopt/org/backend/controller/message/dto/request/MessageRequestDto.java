@@ -7,7 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class MessageRequestDto {
 
-    private final String room_Name;
+    private final String roomName;
 
     private String content;
 

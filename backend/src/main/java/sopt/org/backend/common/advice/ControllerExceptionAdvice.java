@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import sopt.org.backend.common.dto.ErrorType;
-import sopt.org.backend.common.dto.JsonResponse;
+import sopt.org.backend.common.dto.JsonResponseDto;
 import sopt.org.backend.exception.ApiException;
 
 import java.util.Objects;
@@ -22,9 +22,9 @@ public class ControllerExceptionAdvice {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    protected JsonResponse handleMethodArgumentNotValidException(final MethodArgumentNotValidException e) {
+    protected JsonResponseDto handleMethodArgumentNotValidException(final MethodArgumentNotValidException e) {
         FieldError fieldError = Objects.requireNonNull(e.getFieldError());
-        return JsonResponse.error(ErrorType.REQUEST_HEADER_TOKEN_EXCEPTION,
+        return JsonResponseDto.error(ErrorType.REQUEST_HEADER_TOKEN_EXCEPTION,
                 String.format("%s. (%s)", fieldError.getDefaultMessage(), fieldError.getField()));
     }
 
@@ -34,8 +34,8 @@ public class ControllerExceptionAdvice {
 
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(Exception.class)
-    protected JsonResponse<Object> handleException(final Exception e) {
-        return JsonResponse.error(ErrorType.INTERNAL_SERVER_ERROR);
+    protected JsonResponseDto<Object> handleException(final Exception e) {
+        return JsonResponseDto.error(ErrorType.INTERNAL_SERVER_ERROR);
     }
 
     /**
@@ -43,8 +43,8 @@ public class ControllerExceptionAdvice {
      */
 
     @ExceptionHandler(ApiException.class)
-    protected ResponseEntity<JsonResponse> handleCustomException(ApiException e) {
+    protected ResponseEntity<JsonResponseDto> handleCustomException(ApiException e) {
         return ResponseEntity.status(e.getHttpStatus())
-                .body(JsonResponse.error(e.getError()));
+                .body(JsonResponseDto.error(e.getError()));
     }
 }
