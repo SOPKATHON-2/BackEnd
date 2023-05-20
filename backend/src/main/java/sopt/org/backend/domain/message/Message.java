@@ -34,10 +34,10 @@ public class Message {
     @DateTimeFormat(pattern = "yyyy.MM.dd")
     private LocalDateTime createdAt;
 
-    @Builderen
-    public Message(Room room, String content, LocalDateTime createAt) {
-        this.room = room.getId().longValue();
+    @Builder
+    public Message(Room room, String content) {
+        this.room = room;
         this.content = content;
-        this.createdAt = createdAt;
+        this.createdAt = LocalDateTime.now();
     }
 }

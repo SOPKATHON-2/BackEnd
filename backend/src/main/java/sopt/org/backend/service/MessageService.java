@@ -15,6 +15,7 @@ import java.lang.reflect.Member;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -27,10 +28,15 @@ public class MessageService {
     @Transactional
     public void create(MessageRequestDto messageRequestDto){
 
+        Room room = roomRepository.findByName(messageRequestDto.getRoom_Name())
+                .orElseThrow();
+
         messageRepository.save(Message.builder()
-                .roomId(messageRequestDto.getRoom_id())
+                .room(room)
                 .content(messageRequestDto.getContent())
-                .createAt(LocalDateTime.now())
+                .createdAt(LocalDateTime.now())
                 .build());
     }
+
+
 }
