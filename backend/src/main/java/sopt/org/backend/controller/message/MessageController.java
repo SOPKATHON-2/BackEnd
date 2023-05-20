@@ -1,14 +1,13 @@
 package sopt.org.backend.controller.message;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sopt.org.backend.common.dto.JsonResponseDto;
 import sopt.org.backend.common.dto.SuccessType;
 import sopt.org.backend.controller.message.dto.request.MessageRequestDto;
 import sopt.org.backend.service.MessageService;
 
-import java.util.List;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/message")
@@ -18,9 +17,9 @@ public class MessageController {
     private final MessageService messageService;
 
     @PostMapping
-    public ResponseEntity<JsonResponseDto> postMessage(@RequestBody MessageRequestDto messageRequestDto){
+    public JsonResponseDto postMessage(@RequestBody @Valid MessageRequestDto messageRequestDto){
         messageService.create(messageRequestDto);
-        return ResponseEntity.ok(JsonResponseDto.success(SuccessType.CREATE_MESSAGE_SUCCESS));
+        return JsonResponseDto.success(SuccessType.CREATE_MESSAGE_SUCCESS);
 
     }
 }
