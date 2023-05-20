@@ -16,7 +16,6 @@ import java.util.Random;
 public class RoomService {
 
     private final RoomRepository roomRepository;
-    private final MessageRepository messageRepository;
 
     public String createRoom() {
         Room room = new Room(createRoomName());
@@ -26,7 +25,7 @@ public class RoomService {
 
     public int getRoomMessageNum(String roomName) {
         Room room = roomRepository.findByName(roomName)
-                .orElseThrow(() -> new NotFoundException(ErrorType.NOT_FOUND_USER_EXCEPTION));
+                .orElseThrow(() -> new NotFoundException(ErrorType.NOT_FOUND_ROOM_EXCEPTION));
         return room.getMessage().size();
     }
 

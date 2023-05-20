@@ -33,8 +33,9 @@ public class Room {
     @DateTimeFormat(pattern = "yyyy.MM.dd")
     private LocalDateTime createdAt;
 
-//    @Builder
+    @Builder
     public Room(String name) {
         this.name = name;
+        createdAt = LocalDateTime.now();
     }
 }
