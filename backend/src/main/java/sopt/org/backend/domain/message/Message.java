@@ -9,6 +9,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import sopt.org.backend.domain.room.Room;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -28,15 +29,15 @@ public class Message {
     @Column
     private String content;
 
-    @Column(name = "create_at")
+    @Column(name = "created_at")
     @CreatedDate
     @DateTimeFormat(pattern = "yyyy.MM.dd")
-    private Date createAt;
+    private LocalDateTime createdAt;
 
     @Builder
-    public Message(Room room, String content, Date createAt) {
-        this.room = room;
+    public Message(Room room, String content, LocalDateTime createAt) {
+        this.room = room.getId().longValue();
         this.content = content;
-        this.createAt = createAt;
+        this.createdAt = createdAt;
     }
 }
