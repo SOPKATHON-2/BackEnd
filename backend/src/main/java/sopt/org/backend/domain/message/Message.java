@@ -4,6 +4,8 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.format.annotation.DateTimeFormat;
 import sopt.org.backend.domain.room.Room;
 
 import javax.persistence.*;
@@ -27,6 +29,8 @@ public class Message {
     private String content;
 
     @Column(name = "create_at")
+    @CreatedDate
+    @DateTimeFormat(pattern = "yyyy.MM.dd")
     private Date createAt;
 
     @Builder
