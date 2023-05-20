@@ -11,7 +11,6 @@ public class MessageRequestDto {
 
     private final String roomName;
 
-    @Max(100)
     private String content;
 
 }

@@ -33,13 +33,13 @@ public class ControllerExceptionAdvice {
     }
 
 
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler(BadRequestException.class)
-    protected JsonResponseDto handleMethodUrlValidException(final BadRequestException e) {
-        System.out.println("ControllerExceptionAdvice.handleMethodUrlValidException");
-//        FieldError fieldError = Objects.requireNonNull(e.getFieldError());
-        return JsonResponseDto.error(ErrorType.NOT_FOUND_ROOM_EXCEPTION);
-    }
+//    @ResponseStatus(HttpStatus.NOT_FOUND)
+//    @ExceptionHandler(BadRequestException.class)
+//    protected JsonResponseDto handleMethodUrlValidException(final BadRequestException e) {
+//        System.out.println("ControllerExceptionAdvice.handleMethodUrlValidException");
+////        FieldError fieldError = Objects.requireNonNull(e.getFieldError());
+//        return JsonResponseDto.error(ErrorType.NOT_FOUND_ROOM_EXCEPTION);
+//    }
 
     /**
      * 500 Internal Server
