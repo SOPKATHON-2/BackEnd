@@ -19,16 +19,16 @@ public class Room {
     @Id
     @Column(name = "room_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @Size(max = 50)
     @Column(nullable = false)
-    String name;
+    private String name;
 
     @OneToMany(mappedBy = "room")
     private List<Message> message;
 
-    @Column(name = "create_at")
+    @Column(name = "created_at")
     @CreatedDate
     @DateTimeFormat(pattern = "yyyy.MM.dd")
     private LocalDateTime createdAt;
