@@ -9,6 +9,7 @@ import sopt.org.backend.domain.message.Message;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,6 +17,7 @@ import java.time.LocalDateTime;
 public class Room {
 
     @Id
+    @Column(name = "room_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
@@ -23,18 +25,17 @@ public class Room {
     @Column(nullable = false)
     String name;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "messageId", nullable = false)
-    private Message message;
+    @OneToMany(mappedBy = "room")
+    private List<Message> message;
 
+    @Column(name = "create_at")
     @CreatedDate
     @DateTimeFormat(pattern = "yyyy.MM.dd")
     private LocalDateTime createdAt;
 
     @Builder
-    public Room(String name, Message message, LocalDateTime createdAt) {
+    public Room(String name, LocalDateTime createdAt) {
         this.name = name;
-        this.message = message;
         this.createdAt = createdAt;
     }
 }
