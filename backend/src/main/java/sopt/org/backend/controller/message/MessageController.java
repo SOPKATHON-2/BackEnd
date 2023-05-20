@@ -12,6 +12,7 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/api/message")
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class MessageController {
 
     private final MessageService messageService;
