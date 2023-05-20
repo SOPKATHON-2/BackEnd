@@ -1,4 +1,4 @@
-# 프로젝트 이름
+# 담타 ㄱ?
 
 <p align="center">
 <br>
@@ -8,12 +8,7 @@ IMAGES
 
   <br><br>
   
-## 팀원
-유서린 | 장유진 |
-:---------:|:----------:|
-[SeorinY](https://github.com/SeorinY) | [jinchiim](https://github.com/jinchiim) | 
-관련 기능 | 관련 기능 |
-<br><br>
+
 
 ## 구현 기능
 
