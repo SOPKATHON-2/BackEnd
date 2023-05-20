@@ -147,40 +147,42 @@ ex)
     <br><br>
                 
 ## 프로젝트 구조
-  
   ```
 ├── 📂 controller
-│   ├── 📂 user
-│   │   ├── UserController
+│   ├── 📂 room
+│   │   ├── RooController
 │   │   └── 📂 dto
-│   │        └── 📂 request
-│   │        └── 📂 response
-│   ├── 📂 review
-│   └── 📂 post
+│   │        └── request
+│   │        └── response
+│   └── 📂 message
+│       └── MessageController
 │
 ├── 📂 service
-│   ├── 📂 user
-│   │   ├── UserService
-│   │   └── UserServiceImpl
-│   ├── 📂 review
-│   └── 📂 post
+│   ├── UserService
+│   └── MessageService
 │
 ├── 📂 infrastructure
-│   ├── 📂 user
-│   │   ├── UserEntity
-│   │   ├── UserRepository
-│   │   └── UserRepositoryImpl
-│   ├── 📂 review
-│   └── 📂 post
+│   ├── 📂 room
+│   │   └── UserRepository
+│   └── 📂 Message
+│       └── MessageRepository
 │
+├── 📂 domain
+│   ├── 📂 room
+│   │   └── Room
+│   └── 📂 message
+│       └── Message
+|
 ├── 📂 common
 │   ├── 📂 advice
 │   └── 📂 dto
 │
-└── 📂 exception
-    ├── 📂 model
-    ├── Error
-    └── Success
+├── 📂 exception
+│   ├── 📂 model
+│   ├── Error
+│   └── Success
+│
+└── 📂config
 ```
   <br><br>
   
