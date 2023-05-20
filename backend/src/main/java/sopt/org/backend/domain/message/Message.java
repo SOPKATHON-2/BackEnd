@@ -34,7 +34,7 @@ public class Message {
     @DateTimeFormat(pattern = "yyyy.MM.dd")
     private LocalDateTime createdAt;
 
-    @Builder
+    @Builderen
     public Message(Room room, String content, LocalDateTime createAt) {
         this.room = room.getId().longValue();
         this.content = content;
