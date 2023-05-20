@@ -9,11 +9,12 @@ public enum SuccessType {
     /**
      * 200 OK
      */
+    READ_ROOM_MESSAGE_NUM_SUCCESS(HttpStatus.OK, "메세지 개수 조회가 성공했습니다."),
 
     /**
      * 201 CREATED
      */
-    SIGNUP_SUCCESS(HttpStatus.CREATED, "회원가입이 완료됐습니다."),
+    CREATE_ROOM_SUCCESS(HttpStatus.CREATED, "방이 생성되었습니다."),
     ;
 
     private final HttpStatus httpStatus;
